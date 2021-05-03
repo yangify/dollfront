@@ -1,0 +1,19 @@
+<mat-card class="card mat-elevation-z4">
+  <mat-card-header>
+    <mat-card-title>URL/IP discovered</mat-card-title>
+  </mat-card-header>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <mat-list *ngFor="let num of [1,2,3]">
+      <mat-list-item>
+        pepper {{ num }}
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+  <mat-card-footer>
+    <mat-paginator [length]="100"
+                   [pageSize]="10"
+                   [pageSizeOptions]="[5, 10, 25, 100]">
+    </mat-paginator>
+  </mat-card-footer>
+</mat-card>

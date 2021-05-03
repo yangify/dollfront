@@ -1,7 +1,13 @@
 <div class="content">
   <div fxLayout="row wrap" fxLayoutGap="16px grid">
-    <div fxFlex="50%" fxFlex.xs="100%" *ngFor="let num of [1,2]">
-      <mat-card class="mat-elevation-z4">Basic card {{ num }}</mat-card>
+
+    <div fxFlex="50%" fxFlex.xs="100%">
+      <app-apk-card></app-apk-card>
     </div>
+
+    <div fxFlex="50%" fxFlex.xs="100%">
+      <app-url-card></app-url-card>
+    </div>
+
   </div>
 </div>

@@ -8,13 +8,17 @@ import { AppComponent } from './app.component';
 import { LayoutComponent } from './layout/layout.component';
 import { ContentComponent } from './layout/content/content.component';
 import { HeaderComponent } from './layout/header/header.component';
+import { ApkCardComponent } from './component/apk-card/apk-card.component';
+import { UrlCardComponent } from './component/url-card/url-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
     ContentComponent,
-    HeaderComponent
+    HeaderComponent,
+    ApkCardComponent,
+    UrlCardComponent
   ],
   imports: [
     BrowserModule,

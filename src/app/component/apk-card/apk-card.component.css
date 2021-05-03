@@ -1,0 +1,4 @@
+mat-card-content {
+  height: 70vh;
+  overflow-y: auto;
+}
