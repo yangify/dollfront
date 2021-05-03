@@ -7,12 +7,16 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from './material/material.module';
 import { HeaderComponent } from './layout/header/header.component';
 import { ContentComponent } from './layout/content/content.component';
+import { ToolBarComponent } from './layout/header/tool-bar/tool-bar.component';
+import { MenuComponent } from './layout/header/menu/menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ContentComponent
+    ContentComponent,
+    ToolBarComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
