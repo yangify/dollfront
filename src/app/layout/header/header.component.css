@@ -1,7 +1,9 @@
-.navbar {
-  justify-content: space-between;
+.title {
+  padding-left: 15px;
+  padding-right: 20px;
 }
 
-span {
-  padding-right: 1rem;
+.mat-toolbar {
+  position: relative;
+  z-index: 2;
 }
