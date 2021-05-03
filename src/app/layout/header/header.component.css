@@ -2,3 +2,8 @@
   padding-left: 15px;
   padding-right: 20px;
 }
+
+.mat-toolbar {
+  position: relative;
+  z-index: 2;
+}
