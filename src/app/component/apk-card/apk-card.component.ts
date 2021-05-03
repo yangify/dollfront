@@ -12,4 +12,7 @@ export class ApkCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  test(): void {
+    console.log('Clicked');
+  }
 }
