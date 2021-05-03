@@ -1,22 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from './material/material.module';
-import { HeaderComponent } from './layout/header/header.component';
+
+import { AppComponent } from './app.component';
+import { LayoutComponent } from './layout/layout.component';
 import { ContentComponent } from './layout/content/content.component';
-import { ToolBarComponent } from './layout/header/tool-bar/tool-bar.component';
-import { MenuComponent } from './layout/header/menu/menu.component';
+import { HeaderComponent } from './layout/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
+    LayoutComponent,
     ContentComponent,
-    ToolBarComponent,
-    MenuComponent
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

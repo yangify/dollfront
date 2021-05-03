@@ -1,3 +1,21 @@
 <div class="header">
-  <app-tool-bar></app-tool-bar>
+  <mat-toolbar class="navbar" color="primary">
+
+    <!-- Menu button -->
+    <div class="menu-button" fxShow="true" fxHide.gt-xs="true">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+
+    <!-- Title -->
+    <div class="title">Dollup</div>
+
+    <!-- Menu -->
+    <div class="menu" fxShow="true" fxHide.lt-sm="true">
+      <button mat-button>Upload</button>
+      <button mat-button>Progress</button>
+    </div>
+
+  </mat-toolbar>
 </div>
