@@ -9,6 +9,9 @@ export class UploadComponent implements OnInit {
 
   files: File[] = [];
 
+  ngOnInit(): void {
+  }
+
   onSelect(event): void {
     console.log(event);
     this.files.push(...event.addedFiles);
@@ -19,6 +22,7 @@ export class UploadComponent implements OnInit {
     this.files.splice(this.files.indexOf(event), 1);
   }
 
-  ngOnInit(): void {
+  upload(): void {
+    console.log('upload file' + this.files[0].name);
   }
 }
