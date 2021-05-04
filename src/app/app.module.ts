@@ -6,8 +6,8 @@ import { MaterialModule } from './material/material.module';
 
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './component/nav-bar/nav-bar.component';
-import { ApkComponent } from './component/apk/apk.component';
-import { UrlComponent } from './component/url/url.component';
+import { ApkComponent } from './component/home/apk/apk.component';
+import { UrlComponent } from './component/home/url/url.component';
 import { NgxDropzoneModule } from 'ngx-dropzone';
 import { UploadComponent } from './component/upload/upload.component';
 import { RouterModule } from '@angular/router';
