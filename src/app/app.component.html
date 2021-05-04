@@ -13,16 +13,7 @@
     <!-- content -->
     <mat-sidenav-content>
       <div class="content">
-        <div class="home" fxLayout="row wrap" fxLayoutGap="16px grid">
-          <div fxFlex="30%" fxFlex.lt-md="100%">
-            <app-apk></app-apk>
-          </div>
-
-          <div fxFlex="70%" fxFlex.lt-md="100%">
-            <app-url></app-url>
-          </div>
-        </div>
-
+        <router-outlet></router-outlet>
       </div>
     </mat-sidenav-content>
 

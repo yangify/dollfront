@@ -1,0 +1,18 @@
+ngx-dropzone {
+  height: 50vh;
+}
+
+ngx-dropzone-label {
+  width: 200px;
+  overflow-x: auto;
+}
+
+.content {
+  padding: 16px;
+}
+
+.content > mat-card {
+  width: 200px;
+}
+
+

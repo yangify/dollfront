@@ -11,6 +11,7 @@ import { UrlComponent } from './component/url/url.component';
 import { NgxDropzoneModule } from 'ngx-dropzone';
 import { UploadComponent } from './component/upload/upload.component';
 import { RouterModule } from '@angular/router';
+import { HomeComponent } from './component/home/home.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { RouterModule } from '@angular/router';
     NavBarComponent,
     ApkComponent,
     UrlComponent,
-    UploadComponent
+    UploadComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +29,8 @@ import { RouterModule } from '@angular/router';
     MaterialModule,
     NgxDropzoneModule,
     RouterModule.forRoot([
-      { path: '', component: UploadComponent}
+      { path: '', component: HomeComponent },
+      { path: 'upload', component: UploadComponent }
     ])
   ],
   providers: [],
