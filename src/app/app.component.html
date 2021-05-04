@@ -1,1 +1,27 @@
-<app-layout></app-layout>
+<div class="layout-container">
+  <app-nav-bar [sidenav]="sidenav"></app-nav-bar>
+
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav class="sidenav">
+      <p><button mat-button>Upload</button></p>
+      <p><button mat-button>Progress</button></p>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <div class="content">
+        <div fxLayout="row wrap" fxLayoutGap="16px grid">
+
+          <div fxFlex="30%" fxFlex.xs="100%">
+            <app-apk></app-apk>
+          </div>
+
+          <div fxFlex="70%" fxFlex.xs="100%">
+            <app-url></app-url>
+          </div>
+
+        </div>
+      </div>
+    </mat-sidenav-content>
+
+  </mat-sidenav-container>
+</div>

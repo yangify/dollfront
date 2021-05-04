@@ -5,26 +5,30 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from './material/material.module';
 
 import { AppComponent } from './app.component';
-import { LayoutComponent } from './layout/layout.component';
-import { ContentComponent } from './layout/content/content.component';
-import { HeaderComponent } from './layout/header/header.component';
-import { ApkCardComponent } from './component/apk-card/apk-card.component';
-import { UrlCardComponent } from './component/url-card/url-card.component';
+import { NavBarComponent } from './component/nav-bar/nav-bar.component';
+import { ApkComponent } from './component/apk/apk.component';
+import { UrlComponent } from './component/url/url.component';
+import { NgxDropzoneModule } from 'ngx-dropzone';
+import { UploadComponent } from './component/upload/upload.component';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LayoutComponent,
-    ContentComponent,
-    HeaderComponent,
-    ApkCardComponent,
-    UrlCardComponent
+    NavBarComponent,
+    ApkComponent,
+    UrlComponent,
+    UploadComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    MaterialModule
+    MaterialModule,
+    NgxDropzoneModule,
+    RouterModule.forRoot([
+      { path: '', component: UploadComponent}
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
