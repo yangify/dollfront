@@ -10,7 +10,7 @@ import { ApkComponent } from './component/apk/apk.component';
 import { UrlComponent } from './component/url/url.component';
 import { NgxDropzoneModule } from 'ngx-dropzone';
 import { UploadComponent } from './component/upload/upload.component';
-import {RouterModule} from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
