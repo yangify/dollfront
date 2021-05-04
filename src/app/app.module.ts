@@ -12,6 +12,7 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
 import { UploadComponent } from './component/upload/upload.component';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './component/home/home.component';
+import {NotFoundComponent} from './component/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { HomeComponent } from './component/home/home.component';
     NgxDropzoneModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
-      { path: 'upload', component: UploadComponent }
+      { path: 'upload', component: UploadComponent },
+      { path: '**', component: NotFoundComponent }
     ])
   ],
   providers: [],
