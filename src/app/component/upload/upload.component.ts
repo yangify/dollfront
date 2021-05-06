@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import axios from 'axios';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-upload',
@@ -8,23 +9,23 @@ import axios from 'axios';
 })
 export class UploadComponent implements OnInit {
 
-  files: File[] = [];
+  file: File = null;
 
   ngOnInit(): void {
   }
 
   onSelect(event): void {
-    console.log(event);
-    this.files.push(...event.addedFiles);
+    this.file = event.addedFiles[0];
   }
 
-  onRemove(event): void {
-    console.log(event);
-    this.files.splice(this.files.indexOf(event), 1);
+  onRemove(): void {
+    this.file = null;
   }
 
   upload(): void {
-    axios.post('http://localhost:5000/api/upload', this.files);
-    console.log('upload file' + this.files[0].name);
+    const formData = new FormData();
+    formData.append('file', this.file);
+    const config = { headers: {'Content-Type': 'multipart/form-data'} };
+    axios.post(environment.uploadUrl, formData, config);
   }
 }
