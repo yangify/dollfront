@@ -1,1 +1,21 @@
-<app-layout></app-layout>
+<div class="layout-container">
+
+  <!-- Nav bar -->
+  <app-nav-bar [sidenav]="sidenav"></app-nav-bar>
+
+  <!-- Side bar -->
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav class="sidenav">
+      <p><button mat-button>Upload</button></p>
+      <p><button mat-button>Progress</button></p>
+    </mat-sidenav>
+
+    <!-- content -->
+    <mat-sidenav-content>
+      <div class="content">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+
+  </mat-sidenav-container>
+</div>

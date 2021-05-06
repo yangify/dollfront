@@ -1,0 +1,22 @@
+<div class="header">
+  <mat-toolbar class="navbar mat-elevation-z8" color="primary">
+    <!-- Menu button -->
+    <div class="menu-button" fxShow="true" fxHide.gt-sm="true">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+
+    <!-- Title -->
+    <a mat-button href="/" class="title" >
+      <mat-icon class="title-icon">home</mat-icon>
+      <span>Dollup</span>
+    </a>
+
+    <!-- Menu -->
+    <div class="menu" fxShow="true" fxHide.lt-md="true">
+      <a mat-button href="/upload">Upload</a>
+      <a mat-button href="/progress">Progress</a>
+    </div>
+  </mat-toolbar>
+</div>

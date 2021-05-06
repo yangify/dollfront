@@ -1,0 +1,33 @@
+.drop-zone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+mat-card {
+  text-align: center;
+  padding: 40px 40px 40px 40px;
+}
+
+mat-card-title {
+  padding: 16px
+}
+
+mat-card-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ngx-dropzone {
+  height: 50vh;
+  width: 150vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ngx-dropzone-label {
+  width: 200px;
+  overflow-x: auto;
+}

@@ -5,26 +5,37 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from './material/material.module';
 
 import { AppComponent } from './app.component';
-import { LayoutComponent } from './layout/layout.component';
-import { ContentComponent } from './layout/content/content.component';
-import { HeaderComponent } from './layout/header/header.component';
-import { ApkCardComponent } from './component/apk-card/apk-card.component';
-import { UrlCardComponent } from './component/url-card/url-card.component';
+import { NavBarComponent } from './component/nav-bar/nav-bar.component';
+import { ApkComponent } from './component/home/apk/apk.component';
+import { UrlComponent } from './component/home/url/url.component';
+import { NgxDropzoneModule } from 'ngx-dropzone';
+import { UploadComponent } from './component/upload/upload.component';
+import { RouterModule } from '@angular/router';
+import { HomeComponent } from './component/home/home.component';
+import { NotFoundComponent } from './component/not-found/not-found.component';
+
+const routes = [
+  { path: '', component: HomeComponent },
+  { path: 'upload', component: UploadComponent },
+  { path: '**', component: NotFoundComponent }
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-    LayoutComponent,
-    ContentComponent,
-    HeaderComponent,
-    ApkCardComponent,
-    UrlCardComponent
+    NavBarComponent,
+    ApkComponent,
+    UrlComponent,
+    UploadComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    MaterialModule
+    MaterialModule,
+    NgxDropzoneModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]

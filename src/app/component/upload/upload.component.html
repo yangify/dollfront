@@ -1,0 +1,21 @@
+<div class="drop-zone" fxLayout="row wrap">
+  <div fxFlex="15%" fxFlex.lt-md="100%"></div>
+  <div fxFlex="70%" fxFlex.lt-md="100%">
+      <mat-card class="card mat-elevation-z4">
+        <mat-card-title>Upload</mat-card-title>
+        <mat-card-content>
+          <ngx-dropzone (change)="onSelect($event)">
+            <ngx-dropzone-label>Drop it</ngx-dropzone-label>
+            <ngx-dropzone-preview *ngIf="file !== null" [removable]="true" (removed)="onRemove()">
+              <ngx-dropzone-label>{{ file.name }}</ngx-dropzone-label>
+            </ngx-dropzone-preview>
+          </ngx-dropzone>
+        </mat-card-content>
+        <mat-card-footer>
+          <button mat-raised-button type="submit" color="primary" routerLink="/"
+                  (click)="upload()" [disabled]="file == null">Submit</button>
+        </mat-card-footer>
+      </mat-card>
+  </div>
+  <div fxFlex="15%" fxFlex.lt-md="100%"></div>
+</div>

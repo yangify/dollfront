@@ -4,6 +4,11 @@
 }
 
 .mat-toolbar {
+  height: 55px;
   position: relative;
   z-index: 2;
+}
+
+.title-icon {
+  padding-right: 5px;
 }

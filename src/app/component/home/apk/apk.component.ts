@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-apk-card',
-  templateUrl: './apk-card.component.html',
-  styleUrls: ['./apk-card.component.css']
+  selector: 'app-apk',
+  templateUrl: './apk.component.html',
+  styleUrls: ['./apk.component.css']
 })
-export class ApkCardComponent implements OnInit {
+export class ApkComponent implements OnInit {
 
   constructor() { }
 
