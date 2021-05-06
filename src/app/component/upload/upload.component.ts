@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import axios from 'axios';
 
 @Component({
   selector: 'app-upload',
@@ -23,6 +24,7 @@ export class UploadComponent implements OnInit {
   }
 
   upload(): void {
+    axios.post('http://localhost:5000/api/upload', this.files);
     console.log('upload file' + this.files[0].name);
   }
 }
