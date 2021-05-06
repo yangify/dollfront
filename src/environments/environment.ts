@@ -4,6 +4,8 @@
 
 export const environment = {
   production: false,
+  backendUrl: 'http://localhost:5000',
+  apkEndpoint: '/api/apk',
   uploadUrl: 'http://localhost:5000/api/upload'
 };
 

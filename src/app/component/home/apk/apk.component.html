@@ -5,12 +5,18 @@
   </mat-card-header>
   <mat-divider></mat-divider>
   <mat-card-content>
-    <mat-action-list *ngFor="let num of [1,2,3,4,5,6,7,8,9]">
+    <div *ngIf="apks.length == 0">
+      <mat-list>
+        <mat-list-item>No apk</mat-list-item>
+      </mat-list>
+    </div>
+    <mat-action-list *ngFor="let apk of apks">
       <mat-list-item (click)="test()">
         <mat-icon mat-list-icon>folder</mat-icon>
-        <div mat-line>pepper {{num}}</div>
-        <div mat-line>May 3, 2021</div>
+        <div mat-line>{{ apk.name }}</div>
+        <div mat-line>{{ apk.date }}</div>
       </mat-list-item>
+      <mat-divider></mat-divider>
     </mat-action-list>
   </mat-card-content>
   <mat-card-footer>

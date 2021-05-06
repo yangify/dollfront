@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import axios from 'axios';
+import {environment} from '../../../../environments/environment';
 
 @Component({
   selector: 'app-apk',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ApkComponent implements OnInit {
 
+  apks: object[] = [{name: 'test', date: 'test'}];
+
   constructor() { }
 
   ngOnInit(): void {
+    axios
+      .get(environment.backendUrl + environment.apkEndpoint)
+      .then(r => this.apks = r.data.apks );
   }
 
   test(): void {
