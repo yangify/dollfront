@@ -12,7 +12,13 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
 import { UploadComponent } from './component/upload/upload.component';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './component/home/home.component';
-import {NotFoundComponent} from './component/not-found/not-found.component';
+import { NotFoundComponent } from './component/not-found/not-found.component';
+
+const routes = [
+  { path: '', component: HomeComponent },
+  { path: 'upload', component: UploadComponent },
+  { path: '**', component: NotFoundComponent }
+];
 
 @NgModule({
   declarations: [
@@ -29,11 +35,7 @@ import {NotFoundComponent} from './component/not-found/not-found.component';
     FlexLayoutModule,
     MaterialModule,
     NgxDropzoneModule,
-    RouterModule.forRoot([
-      { path: '', component: HomeComponent },
-      { path: 'upload', component: UploadComponent },
-      { path: '**', component: NotFoundComponent }
-    ])
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
