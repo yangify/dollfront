@@ -6,6 +6,7 @@ export const environment = {
   production: false,
   backendUrl: 'http://localhost:5000',
   apkEndpoint: '/api/apk',
+  linkEndpoint: '/api/link',
   uploadUrl: 'http://localhost:5000/api/upload'
 };
 
