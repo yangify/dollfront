@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { LinkTab } from "./link_tab";
+import { LinkNav } from "./link_nav";
+import { LinkContent } from "./link_content";
 
 export const LinkCard = () => {
 
@@ -16,19 +17,10 @@ export const LinkCard = () => {
 
     return (
         <div className="card h-100">
-            <div className="card-header">
-                Link
-            </div>
+            <div className="card-header">Link</div>
             <div className="card-body overflow-auto">
-                <LinkTab tools={ links === undefined || links === null ? [] : Object.keys(links) }/>
-                <div className="tab-content" id="nav-tabContent">
-                    <div className="tab-pane fade show active p-2" id="nav-home" role="tabpanel">
-                        This is some placeholder content the Contact tab's associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other .nav-powered navigation.
-                    </div>
-
-                    <div className="tab-pane fade" id="nav-profile" role="tabpanel">...
-                    </div>
-                </div>
+                <LinkNav tools={ links === undefined || links === null ? [] : Object.keys(links) }/>
+                <LinkContent />
             </div>
         </div>
     );
