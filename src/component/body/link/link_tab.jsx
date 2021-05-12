@@ -14,7 +14,3 @@ export const LinkTab = ({ tools }) => {
         </nav>
     );
 }
-
-// <button className="nav-link" id="nav-profile-tab" data-bs-toggle="tab"
-//         data-bs-target="#nav-profile" type="button" role="tab">jadx
-// </button>
