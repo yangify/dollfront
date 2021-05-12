@@ -1,5 +1,5 @@
-import { ApkCard } from "./apk_card";
-import { LinkPanel } from "./link_panel";
+import { ApkCard } from "./apk/apk_card";
+import { LinkPanel } from "./link/link_panel";
 
 export const Body = () => {
     return (
