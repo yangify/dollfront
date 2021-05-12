@@ -20,7 +20,10 @@ export const ApkCard = () => {
                 APK
             </div>
             <div className="card-body overflow-auto">
-                <ApkList apks={apks} />
+                { apks.length === 0 ?
+                    <img src='nothingness.gif' alt='Nothing to see here' /> :
+                    <ApkList apks={apks} />
+                }
             </div>
         </div>
     );
