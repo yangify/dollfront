@@ -20,7 +20,7 @@ export const LinkCard = () => {
             <div className="card-header">Link</div>
             <div className="card-body overflow-auto">
                 <LinkNav tools={ links === undefined || links === null ? [] : Object.keys(links) }/>
-                <LinkContent />
+                <LinkContent content={ links === undefined || links === null ? {} : links }/>
             </div>
         </div>
     );
