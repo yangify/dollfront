@@ -1,15 +1,15 @@
 import { ApkCard } from "./apk/apk_card";
-import { LinkPanel } from "./link/link_panel";
+import { LinkCard } from "./link/link_card";
 
 export const Body = () => {
     return (
-        <div className="container-fluid p-4 h-75">
+        <div className="container-fluid h-75 p-4">
             <div className="row h-100" >
-                <div className="col-lg-4 h-100" >
+                <div className="col-xl-5 h-100" >
                     <ApkCard />
                 </div>
-                <div className="col-lg-8">
-                    <LinkPanel />
+                <div className="col-xl-7 h-100">
+                    <LinkCard />
                 </div>
             </div>
         </div>
