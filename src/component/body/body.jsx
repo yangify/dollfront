@@ -1,8 +1,8 @@
+import React from "react";
 import { Route, Switch } from "react-router-dom";
 import { Home } from "./home/home";
 import { Upload } from "./upload/upload";
 import { NotFound } from "../404/not_found";
-import React from "react";
 
 export const Body = () => {
     return (
