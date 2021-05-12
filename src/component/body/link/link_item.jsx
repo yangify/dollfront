@@ -1,14 +1,9 @@
-export const LinkItem =() => {
+export const LinkItem = ({ link }) => {
     return (
-        <button
-            className="btn list-group-item list-group-item-action list-group-item-primary d-flex justify-content-between align-items-start">
-            <i className="bi bi-archive-fill mt-3 me-2"/>
+        <button className="btn list-group-item list-group-item-action d-flex justify-content-between align-items-start">
             <div className="ms-2 me-auto">
-                <div className="fw-bold">test</div>
-                <div className="fw-normal">test</div>
-            </div>
-            <div className="badge bg-success rounded-pill mt-3 p-2">
-                <i className="bi bi-check-lg"/>
+                <div className="fw-bold">{ link.link }</div>
+                <div className="fw-light">{ link.path }</div>
             </div>
         </button>
     );
