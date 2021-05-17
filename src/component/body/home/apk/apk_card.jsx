@@ -16,9 +16,9 @@ const ApkCard = (props) => {
                 APK
             </div>
             <div className="card-body overflow-auto">
-                { props.apk.length === 0 ?
+                { props.list.length === 0 ?
                     <img src='nothingness.gif' alt='Nothing to see here' /> :
-                    <ApkList apks={props.apk} />
+                    <ApkList apks={props.list} selected={props.selected}/>
                 }
             </div>
         </div>
@@ -26,7 +26,9 @@ const ApkCard = (props) => {
 }
 
 const mapStateToProps = state => ({
-    ...state
+    ...state,
+    list: state.apk.list,
+    selected: state.apk.selected
 });
 
 const mapDispatchToProps = {getApk}

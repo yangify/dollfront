@@ -1,9 +1,17 @@
-import * as type from "../action/types";
+import { GET_APK } from "../action/types";
 
-export const apkReducer = (state=[], action) => {
+const initialState = {
+    list: [],
+    selected: {}
+}
+
+export const apkReducer = (state=initialState, action) => {
     switch (action.type) {
-        case type.GET_APK:
-            return [...action.payload.apks];
+        case GET_APK:
+            return {
+                list: action.payload.apks,
+                selected: action.payload.apks[0]
+            };
         default:
             return state;
     }

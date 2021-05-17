@@ -1,7 +1,10 @@
-export const ApkItem = ({ apk }) => {
+export const ApkItem = ({ apk, isSelected }) => {
+
+    const buttonClass = "btn list-group-item list-group-item-action d-flex justify-content-between align-items-start";
+
     return (
         <button
-            className="btn list-group-item list-group-item-action list-group-item-primary d-flex justify-content-between align-items-start">
+            className={!isSelected ? buttonClass : buttonClass + " list-group-item-primary"}>
             <i className="bi bi-archive-fill mt-3 me-2"/>
             <div className="ms-2 me-auto">
                 <div className="fw-bold">{ apk.name }</div>
