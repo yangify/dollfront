@@ -1,17 +1,37 @@
+import { useState } from "react";
+import axios from "axios";
+
 export const UploadCard = () => {
+
+    let [isLoading, setIsLoading] = useState(false);
+    let file = null;
+
+    function onChange(event) {
+        file = event.target.files[0];
+    }
+
+    function onClick() {
+        isLoading = setIsLoading(true);
+        const data = new FormData()
+        data.append('file', file);
+        axios
+            .post("http://localhost:5000/api/upload", data)
+            .then(() => window.location.reload());
+    }
+
     return (
         <div className="card">
             <div className="card-header">
                 Upload
             </div>
-            <form method="post" encType="multipart/form-data">
-                <div className="card-body text-center overflow-auto">
-                    <input type="file" className="form-control-file" />
-                </div>
-                <div className="card-footer text-center">
-                    <input type="submit" className="btn btn-primary" />
-                </div>
-            </form>
+            <div className="card-body text-center overflow-auto">
+                { isLoading ? <div className="spinner-border" role="status" /> :
+                    <input type="file" className="form-control-file" onChange={onChange} required/>
+                }
+            </div>
+            <div className="card-footer text-center">
+                <input type="submit" className="btn btn-primary" onClick={onClick}/>
+            </div>
         </div>
     );
 }
