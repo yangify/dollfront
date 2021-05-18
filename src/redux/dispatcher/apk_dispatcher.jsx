@@ -1,5 +1,11 @@
-import * as action from "../action/apk_action";
+import * as apkAction from "../action/apk_action";
 
 export const getApk = () => async dispatch => {
-    dispatch(await action.getApk());
-}
+    const action = await apkAction.getApk();
+    dispatch(action);
+};
+
+export const selectApk = apk => dispatch => {
+    const action = apkAction.selectApk(apk);
+    dispatch(action);
+};

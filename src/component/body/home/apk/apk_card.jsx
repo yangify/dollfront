@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 import { ApkList } from "./apk_list";
 import { getApk } from "../../../../redux/dispatcher/apk_dispatcher";
 
-const ApkCard = (props) => {
+const ApkCard = ({ list, getApk }) => {
 
     // eslint-disable-next-line
-    useEffect( () => { props.getApk() }, [])
+    useEffect( () => { getApk() }, [])
 
     return (
         <div className="card h-100">
@@ -14,9 +14,9 @@ const ApkCard = (props) => {
                 APK
             </div>
             <div className="card-body overflow-auto">
-                { props.list.length === 0 ?
+                { list.length === 0 ?
                     <img src='nothingness.gif' alt='Nothing to see here' /> :
-                    <ApkList apks={props.list} selected={props.selected}/>
+                    <ApkList apks={list} />
                 }
             </div>
         </div>
@@ -25,8 +25,7 @@ const ApkCard = (props) => {
 
 const mapStateToProps = state => ({
     ...state,
-    list: state.apk.list,
-    selected: state.apk.selected
+    list: state.apks.list
 });
 
 const mapDispatchToProps = {getApk}

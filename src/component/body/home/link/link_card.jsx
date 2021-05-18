@@ -31,7 +31,7 @@ const LinkCard = (props) => {
 
 const mapStateToProps = state => ({
     ...state,
-    selected: state.apk.selected
+    selected: state.apks.selected
 });
 
 const mapDispatchToProps = {getApk}
