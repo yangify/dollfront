@@ -5,10 +5,8 @@ import { getApk } from "../../../../redux/dispatcher/apk_dispatcher";
 
 const ApkCard = (props) => {
 
-    useEffect( () => {
-        props.getApk();
     // eslint-disable-next-line
-    }, [])
+    useEffect( () => { props.getApk() }, [])
 
     return (
         <div className="card h-100">
