@@ -1,29 +1,21 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { connect } from "react-redux";
+
 import { LinkNav } from "./link_nav";
 import { LinkContent } from "./link_content";
-import { getApk } from "../../../../redux/dispatcher/apk_dispatcher";
-import { connect } from "react-redux";
+import { getLink } from "../../../../redux/dispatcher/link_dispatcher";
 
 const LinkCard = (props) => {
 
-    const [links, setLinks] = useState()
-
-    useEffect(() => {
-        const getLinks = async () => {
-            const result = await fetch(`http://localhost:5000/api/link?filename=${props.selected.name}`);
-            const data = await result.json();
-            setLinks(data);
-        }
-        getLinks();
-        // eslint-disable-next-line
-    }, [props.selected])
+    // eslint-disable-next-line
+    useEffect(() => { props.getLink(props.selected.name) }, [props.selected])
 
     return (
         <div className="card h-100">
             <div className="card-header">Link</div>
             <div className="card-body overflow-auto">
-                <LinkNav tools={ links === undefined || links === null ? [] : Object.keys(links) }/>
-                <LinkContent content={ links === undefined || links === null ? {} : links }/>
+                <LinkNav tools={ Object.keys(props.links) }/>
+                <LinkContent content={ props.links }/>
             </div>
         </div>
     );
@@ -31,9 +23,9 @@ const LinkCard = (props) => {
 
 const mapStateToProps = state => ({
     ...state,
-    selected: state.apks.selected
+    selected: state.apks.selected,
 });
 
-const mapDispatchToProps = {getApk}
+const mapDispatchToProps = { getLink }
 
 export default connect(mapStateToProps, mapDispatchToProps)(LinkCard)
