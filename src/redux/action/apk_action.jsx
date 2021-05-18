@@ -1,7 +1,7 @@
 import * as type from "./types";
 
 export const getApk = async () => {
-    const response = await fetch('http://localhost:5000/api/apk');
+    const response = await fetch(process.env.REACT_APP_SERVER_URL + process.env.REACT_APP_APK_ENDPOINT);
     const data = await response.json();
     return {
         type: type.GET_APK,
