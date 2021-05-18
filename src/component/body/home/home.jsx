@@ -1,5 +1,5 @@
 import ApkCard from "./apk/apk_card";
-import { LinkCard } from "./link/link_card";
+import LinkCard from "./link/link_card";
 import { UploadCard } from "./upload/upload_card";
 
 export const Home = () => {
