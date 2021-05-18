@@ -1,6 +1,8 @@
 import { combineReducers } from "redux";
-import { apkReducer } from './apk_reducer';
+import { ApkReducer } from './apk_reducer';
+import { LinkReducer } from "./link_reducer";
 
 export default combineReducers({
-   apks: apkReducer
+   apks: ApkReducer,
+   links: LinkReducer
 });
