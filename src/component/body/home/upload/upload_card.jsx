@@ -12,11 +12,10 @@ export const Upload = () => {
 
     function onClick() {
         isLoading = setIsLoading(true);
-        const data = new FormData()
+        const url = process.env.REACT_APP_SERVER_URL + process.env.REACT_APP_UPLOAD_ENDPOINT;
+        const data = new FormData();
         data.append('file', file);
-        axios
-            .post("http://localhost:5000/api/upload", data)
-            .then(() => window.location.replace('/'));
+        axios.post(url, data).then(() => window.location.replace('/'));
     }
 
     return (
