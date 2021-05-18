@@ -9,10 +9,8 @@ const ApkCard = ({ list, getApk }) => {
     useEffect( () => { getApk() }, [])
 
     return (
-        <div className="card h-100">
-            <div className="card-header">
-                APK
-            </div>
+        <div className="card">
+            <div className="card-header">APK</div>
             <div className="card-body overflow-auto">
                 { list.length === 0 ?
                     <img src='nothingness.gif' alt='Nothing to see here' /> :
