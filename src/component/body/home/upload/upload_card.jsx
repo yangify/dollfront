@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
-export const UploadCard = () => {
+export const Upload = () => {
 
     let [isLoading, setIsLoading] = useState(false);
     let file = null;
@@ -16,12 +16,12 @@ export const UploadCard = () => {
         data.append('file', file);
         axios
             .post("http://localhost:5000/api/upload", data)
-            .then(() => window.location.reload());
+            .then(() => window.location.replace('/'));
     }
 
     return (
         <div className="card">
-            <div className="card-header">
+            <div className="card-header text-center">
                 Upload
             </div>
             <div className="card-body text-center overflow-auto">
