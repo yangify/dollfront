@@ -5,17 +5,17 @@ import { LinkNav } from "./link_nav";
 import { LinkContent } from "./link_content";
 import { getLink } from "../../../../redux/dispatcher/link_dispatcher";
 
-const LinkCard = (props) => {
+const LinkCard = ({ links, selected, getLink }) => {
 
     // eslint-disable-next-line
-    useEffect(() => { props.getLink(props.selected.name) }, [props.selected])
+    useEffect(() => { getLink(selected.name) }, [selected])
 
     return (
         <div className="card h-100">
             <div className="card-header">Link</div>
             <div className="card-body overflow-auto">
-                <LinkNav tools={ Object.keys(props.links) }/>
-                <LinkContent content={ props.links }/>
+                <LinkNav tools={ Object.keys(links) }/>
+                <LinkContent content={ links }/>
             </div>
         </div>
     );
