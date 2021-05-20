@@ -1,7 +1,7 @@
 import * as type from "./types";
 
 
-export const getLink = async filename => {
+export const getDetections = async filename => {
 
     const url = process.env.REACT_APP_SERVER_URL + process.env.REACT_APP_LINK_ENDPOINT + `?filename=${filename}`;
     const response = await fetch(url);

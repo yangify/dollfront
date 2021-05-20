@@ -2,22 +2,22 @@ import { useEffect } from "react";
 import { connect } from "react-redux";
 
 import { DetectionNav } from "./detection_nav";
-import { DetectionContent } from "./detection_content";
-import { getLink } from "../../../../redux/dispatcher/link_dispatcher";
+import { DetectionTab } from "./detection_tab";
+import { getDetections } from "../../../../redux/dispatcher/detection_dispatcher";
 
-const DetectionCard = ({ links, selected, getLink }) => {
+const DetectionCard = ({ detections, selected, getLink }) => {
 
     // eslint-disable-next-line
     useEffect(() => { getLink(selected.name) }, [selected])
 
-    let tools = links.map(link => { return link['decompiler']})
+    let tools = detections.map(link => { return link['decompiler']})
 
     return (
         <div className="card h-100">
             <div className="card-header">Link</div>
             <div className="card-body overflow-auto">
                 <DetectionNav tools={ tools }/>
-                <DetectionContent content={ links }/>
+                <DetectionTab tabs={ detections }/>
             </div>
         </div>
     );
@@ -28,6 +28,6 @@ const mapStateToProps = state => ({
     selected: state.apks.selected,
 });
 
-const mapDispatchToProps = { getLink }
+const mapDispatchToProps = { getLink: getDetections }
 
 export default connect(mapStateToProps, mapDispatchToProps)(DetectionCard)

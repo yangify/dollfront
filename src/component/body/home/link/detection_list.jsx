@@ -1,14 +1,14 @@
 import { DetectionItem } from "./detection_item";
 
-export const DetectionList = ({ links }) => {
+export const DetectionList = ({ detections }) => {
 
     let key = 0;
     return (
         <ul className="list-group list-group-flush">
             {
-                links.map(object => (
-                    object['links'].map(link => (
-                        <DetectionItem key={key++} link={link} path={object['path']}/>
+                detections.map(detection => (
+                    detection['links'].map(link => (
+                        <DetectionItem key={key++} link={link} path={detection.path} />
                     ))
                 ))
             }
