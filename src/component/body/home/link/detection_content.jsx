@@ -1,6 +1,6 @@
-import { LinkList } from "./link_list";
+import { DetectionList } from "./detection_list";
 
-export const LinkContent = ({ content }) => {
+export const DetectionContent = ({ content }) => {
 
     const dormant = "tab-pane fade p-2";
     const active = dormant + " show active";
@@ -10,7 +10,7 @@ export const LinkContent = ({ content }) => {
             {
                 Object.keys(content).map((tool, index) => (
                     <div className={ index === 0 ? active : dormant } key={index} id={tool} role="tabpanel">
-                        <LinkList links={content[tool]}/>
+                        <DetectionList links={content[tool]}/>
                     </div>
                 ))
             }

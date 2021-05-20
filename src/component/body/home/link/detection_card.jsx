@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 import { connect } from "react-redux";
 
-import { LinkNav } from "./link_nav";
-import { LinkContent } from "./link_content";
+import { DetectionNav } from "./detection_nav";
+import { DetectionContent } from "./detection_content";
 import { getLink } from "../../../../redux/dispatcher/link_dispatcher";
 
-const LinkCard = ({ links, selected, getLink }) => {
+const DetectionCard = ({ links, selected, getLink }) => {
 
     // eslint-disable-next-line
     useEffect(() => { getLink(selected.name) }, [selected])
@@ -14,8 +14,8 @@ const LinkCard = ({ links, selected, getLink }) => {
         <div className="card h-100">
             <div className="card-header">Link</div>
             <div className="card-body overflow-auto">
-                <LinkNav tools={ Object.keys(links) }/>
-                <LinkContent content={ links }/>
+                <DetectionNav tools={ Object.keys(links) }/>
+                <DetectionContent content={ links }/>
             </div>
         </div>
     );
@@ -28,4 +28,4 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = { getLink }
 
-export default connect(mapStateToProps, mapDispatchToProps)(LinkCard)
+export default connect(mapStateToProps, mapDispatchToProps)(DetectionCard)

@@ -1,11 +1,11 @@
-import { LinkItem } from "./link_item";
+import { DetectionItem } from "./detection_item";
 
-export const LinkList = ({ links }) => {
+export const DetectionList = ({ links }) => {
     return (
         <ul className="list-group list-group-flush">
             {
                 links.map((link, index) => (
-                    <LinkItem key={index} link={link} />
+                    <DetectionItem key={index} link={link} />
                 ))
             }
         </ul>
