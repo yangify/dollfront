@@ -10,11 +10,13 @@ const DetectionCard = ({ links, selected, getLink }) => {
     // eslint-disable-next-line
     useEffect(() => { getLink(selected.name) }, [selected])
 
+    let tools = links.map(link => { return link['decompiler']})
+
     return (
         <div className="card h-100">
             <div className="card-header">Link</div>
             <div className="card-body overflow-auto">
-                <DetectionNav tools={ Object.keys(links) }/>
+                <DetectionNav tools={ tools }/>
                 <DetectionContent content={ links }/>
             </div>
         </div>

@@ -8,9 +8,9 @@ export const DetectionContent = ({ content }) => {
     return (
         <div className="tab-content" id="nav-tabContent">
             {
-                Object.keys(content).map((tool, index) => (
-                    <div className={ index === 0 ? active : dormant } key={index} id={tool} role="tabpanel">
-                        <DetectionList links={content[tool]}/>
+                content.map((links, index) => (
+                    <div className={ index === 0 ? active : dormant } key={index} id={links['decompiler']} role="tabpanel">
+                        <DetectionList links={links['detections']}/>
                     </div>
                 ))
             }

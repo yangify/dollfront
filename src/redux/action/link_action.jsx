@@ -9,6 +9,6 @@ export const getLink = async filename => {
 
     return {
         type: type.GET_LINK,
-        payload: data
+        payload: data.data
     }
 }
