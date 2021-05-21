@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import { Home } from "./home/home";
 import { Upload } from "./home/upload/upload_card";
-import { NotFound } from "../404/not_found";
+import { NotFound } from "./404/not_found";
 
 export const Body = () => {
     return (

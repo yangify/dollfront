@@ -1,4 +1,4 @@
-export const LinkNav = ({ tools }) => {
+export const DetectionNav = ({ tools }) => {
 
     const dormant = "nav-link";
     const active = dormant + " active";

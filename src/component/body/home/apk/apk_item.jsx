@@ -3,19 +3,23 @@ import { selectApk } from "../../../../redux/dispatcher/apk_dispatcher";
 
 const ApkItem = ({ apk, selected, selectApk }) => {
 
-    const buttonClass = "btn list-group-item list-group-item-action";
+    const dormant = "btn list-group-item list-group-item-action d-flex justify-content-between align-items-center";
+    const active = dormant + " list-group-item-info";
     const isSelected = selected.name === apk.name;
 
+    const select = () => { selectApk(apk) };
+    const download = () => { console.log('download')};
+
     return (
-        <button className={!isSelected ? buttonClass : buttonClass + " list-group-item-primary"} onClick={() => selectApk(apk)}>
-            {/*<i className="bi bi-archive-fill mt-3 me-2"/>*/}
-            <div className="ms-2 me-auto">
+        <button className={isSelected ? active : dormant} onClick={select}>
+            <div className="w-75">
                 <div className="fw-bold">{ apk.name }</div>
-                <div className="fw-normal d-flex justify-content-between align-items-start">
-                    <span>{ apk.date }</span>
-                    <div className="badge bg-success rounded-pill p-1">
-                        <i className="bi bi-check"/>
-                    </div>
+                <div className="fw-normal">{ apk.date }</div>
+            </div>
+            <div>
+                <i className="bi bi-download" onClick={download}/>
+                <div className="ms-3 badge bg-success rounded-pill p-1">
+                    <i className="bi bi-check"/>
                 </div>
             </div>
             {/*<div className="badge bg-success rounded-pill mt-3 p-2">*/}
