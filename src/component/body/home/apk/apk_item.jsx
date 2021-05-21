@@ -4,7 +4,7 @@ import { selectApk } from "../../../../redux/dispatcher/apk_dispatcher";
 const ApkItem = ({ apk, selected, selectApk }) => {
 
     const dormant = "btn list-group-item list-group-item-action d-flex justify-content-between align-items-center";
-    const active = dormant + " list-group-item-info";
+    const active = dormant + " list-group-item-secondary";
     const isSelected = selected.name === apk.name;
 
     const select = () => { selectApk(apk) };
