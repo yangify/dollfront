@@ -8,7 +8,6 @@ const ApkItem = ({ apk, selected, selectApk }) => {
     const isSelected = selected.name === apk.name;
 
     const select = () => { selectApk(apk) };
-    const download = () => { console.log('download')};
 
     return (
         <button className={isSelected ? active : dormant} onClick={select}>
@@ -17,7 +16,9 @@ const ApkItem = ({ apk, selected, selectApk }) => {
                 <div className="fw-normal">{ apk.date }</div>
             </div>
             <div>
-                <i className="bi bi-download" onClick={download}/>
+                <a href={ `${process.env.REACT_APP_SERVER_URL}${process.env.REACT_APP_DOWNLOAD_ENDPOINT}/${apk.name}` } download>
+                    <i className="bi bi-download"/>
+                </a>
                 <div className="ms-3 badge bg-success rounded-pill p-1">
                     <i className="bi bi-check"/>
                 </div>
