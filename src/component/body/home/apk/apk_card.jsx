@@ -4,7 +4,7 @@ import { ApkList } from "./apk_list";
 import { getApk } from "../../../../redux/dispatcher/apk_dispatcher";
 
 const ApkCard = ({ list, getApk }) => {
-    // TODO change to get apk from sourcegraph
+
     // eslint-disable-next-line
     useEffect( () => { getApk() }, [])
 
