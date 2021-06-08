@@ -1,10 +1,9 @@
 import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
 
-import { changePage } from "../../../redux/dispatcher/page_dispatcher";
 import * as Pages from "../../../pages";
 
-const Menu = ({ changePage }) => {
+const Menu = () => {
 
     const home = "nav-link px-2 text-secondary";
     const link = "nav-link px-2 text-white";
@@ -13,8 +12,7 @@ const Menu = ({ changePage }) => {
         <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 ms-auto">
             { Pages.PAGE_LIST.map( page => (
                 <li key={page.name} >
-                    <Link to={page.link} onClick={() => changePage(page)}
-                          className={ page.name === Pages.HOME.name ? home : link }>
+                    <Link to={page.link} className={ page.name === Pages.HOME.name ? home : link }>
                         {page.display}
                     </Link>
                 </li>
@@ -26,6 +24,6 @@ const Menu = ({ changePage }) => {
 
 const mapStateToProps = state => ({ ...state });
 
-const mapDispatchToProps = { changePage }
+const mapDispatchToProps = { }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Menu)

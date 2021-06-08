@@ -1,8 +1,8 @@
-import * as type from "./types";
+import * as Types from "./types";
 
-export const changePage = page => {
+export const setPage = page => {
     return {
-        type: type.CHANGE_PAGE,
+        type: Types.SET_PAGE,
         payload: page
     }
 }

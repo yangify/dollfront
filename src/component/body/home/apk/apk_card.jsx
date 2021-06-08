@@ -6,8 +6,7 @@ import { ApkList } from "./apk_list";
 
 const ApkCard = ({ list, getApk }) => {
 
-    // eslint-disable-next-line
-    useEffect( () => { getApk() }, [])
+    useEffect( () => { getApk() }, [getApk])
 
     return (
         <div className="card">

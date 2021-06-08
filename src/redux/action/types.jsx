@@ -1,5 +1,5 @@
 // PAGE
-export const CHANGE_PAGE = 'CHANGE_PAGE';
+export const SET_PAGE = 'SET_PAGE';
 
 // APK
 export const GET_APK = 'GET_APK';

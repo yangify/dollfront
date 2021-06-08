@@ -6,8 +6,7 @@ import { DetectionList } from "./detection_list";
 
 const DetectionCard = ({ detections, selected, getDetections }) => {
 
-    // eslint-disable-next-line
-    useEffect(() => { getDetections(selected.name) }, [selected])
+    useEffect(() => { getDetections(selected.name) }, [getDetections, selected])
 
     return (
         <div className="card h-100">

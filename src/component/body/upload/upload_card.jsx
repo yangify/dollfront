@@ -1,7 +1,11 @@
-import { useState } from "react";
 import axios from "axios";
+import {useEffect, useState} from "react";
+import { connect } from "react-redux";
 
-export const Upload = () => {
+import { UPLOAD } from "../../../pages";
+import { setPage } from "../../../redux/dispatcher/page_dispatcher";
+
+const Upload = ({ setPage }) => {
 
     let [isLoading, setIsLoading] = useState(false);
     let file = null;
@@ -17,6 +21,8 @@ export const Upload = () => {
         data.append('file', file);
         axios.post(url, data).then(() => window.location.replace('/'));
     }
+
+    useEffect(() => { setPage(UPLOAD) }, [setPage])
 
     return (
         <div className="card">
@@ -34,3 +40,9 @@ export const Upload = () => {
         </div>
     );
 }
+
+const mapStateToProps = state => ({ ...state });
+
+const mapDispatchToProps = { setPage }
+
+export default connect(mapStateToProps, mapDispatchToProps)(Upload)

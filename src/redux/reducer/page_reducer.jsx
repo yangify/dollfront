@@ -3,9 +3,9 @@ import * as Page from '../../pages';
 
 export const PageReducer = (state=Page.HOME, action) => {
     switch (action.type) {
-        case Type.CHANGE_PAGE:
+        case Type.SET_PAGE:
             return action.payload;
         default:
-            return Page.HOME;
+            return state;
     }
 };

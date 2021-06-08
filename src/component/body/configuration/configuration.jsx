@@ -1,14 +1,18 @@
-import { connect } from "react-redux";
 import { useEffect } from "react";
+import { connect } from "react-redux";
 
+import ConfigurationCard from "./configuration_card";
+import { CONFIGURATION } from "../../../pages";
+import { setPage } from "../../../redux/dispatcher/page_dispatcher";
 import { getConfiguration } from "../../../redux/dispatcher/configuration_dispatcher";
 import { ConfigurationForm } from "./configuration_form";
-import ConfigurationCard from "./configuration_card";
 
-const Configuration = ({ getConfiguration }) => {
+const Configuration = ({ setPage, getConfiguration }) => {
 
-    // eslint-disable-next-line
-    useEffect(() => { getConfiguration() }, [])
+    useEffect(() => {
+        setPage(CONFIGURATION);
+        getConfiguration()
+    }, [setPage, getConfiguration])
 
     return (
         <>
@@ -22,6 +26,9 @@ const Configuration = ({ getConfiguration }) => {
 
 const mapStateToProps = state => ({ ...state });
 
-const mapDispatchToProps = { getConfiguration }
+const mapDispatchToProps = {
+    setPage,
+    getConfiguration
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(Configuration)
