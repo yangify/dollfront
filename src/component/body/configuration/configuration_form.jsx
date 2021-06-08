@@ -22,7 +22,7 @@ export const ConfigurationForm = () => {
         <div className='card mb-4 collapse' id='configurationForm'>
             <div className='card-body'>
                 <input type='text' name='title' onChange={changeTitle} /><br/>
-                <input type='text' name='query' onChange={changeQuery} /><br/>
+                <textarea name='query' onChange={changeQuery} /><br/>
                 <input type='submit' onClick={onClick}/>
             </div>
         </div>
