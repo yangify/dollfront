@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { connect } from 'react-redux';
-import { ApkList } from "./apk_list";
+
 import { getApk } from "../../../../redux/dispatcher/apk_dispatcher";
+import { ApkList } from "./apk_list";
 
 const ApkCard = ({ list, getApk }) => {
 

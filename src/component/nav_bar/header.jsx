@@ -1,4 +1,4 @@
-import { Menu }  from "./menu";
+import Menu from "./menu";
 import { Logo } from "./logo";
 import { LoginButton } from "./login_button";
 import { SignupButton } from "./signup_button";
