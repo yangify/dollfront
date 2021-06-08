@@ -1,5 +1,4 @@
 import { connect } from "react-redux";
-import { changePage } from "../../redux/dispatcher/page_dispatcher";
 
 const SubHeader = ({ page }) => {
     return (
@@ -15,6 +14,6 @@ const SubHeader = ({ page }) => {
 
 const mapStateToProps = state => ({ ...state });
 
-const mapDispatchToProps = { changePage }
+const mapDispatchToProps = {}
 
 export default connect(mapStateToProps, mapDispatchToProps)(SubHeader)

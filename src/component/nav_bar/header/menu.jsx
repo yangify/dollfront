@@ -1,8 +1,8 @@
 import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
 
-import { changePage } from "../../redux/dispatcher/page_dispatcher";
-import * as Pages from "../../pages";
+import { changePage } from "../../../redux/dispatcher/page_dispatcher";
+import * as Pages from "../../../pages";
 
 const Menu = ({ changePage }) => {
 
