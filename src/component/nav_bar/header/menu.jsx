@@ -3,16 +3,16 @@ import { Link } from 'react-router-dom';
 
 import * as Pages from "../../../pages";
 
-const Menu = () => {
+const Menu = ({ currentPage }) => {
 
-    const home = "nav-link px-2 text-secondary";
+    const selected = "nav-link px-2 text-secondary";
     const link = "nav-link px-2 text-white";
 
     return (
         <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 ms-auto">
             { Pages.PAGE_LIST.map( page => (
                 <li key={page.name} >
-                    <Link to={page.link} className={ page.name === Pages.HOME.name ? home : link }>
+                    <Link to={page.link} className={ page.name === currentPage.name ? selected : link }>
                         {page.display}
                     </Link>
                 </li>
@@ -22,7 +22,10 @@ const Menu = () => {
     );
 }
 
-const mapStateToProps = state => ({ ...state });
+const mapStateToProps = state => ({
+    ...state,
+    currentPage: state.page
+});
 
 const mapDispatchToProps = { }
 
