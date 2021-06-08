@@ -6,6 +6,6 @@ export const PageReducer = (state=Page.HOME, action) => {
         case Type.CHANGE_PAGE:
             return action.payload;
         default:
-            return 'home';
+            return Page.HOME;
     }
 };

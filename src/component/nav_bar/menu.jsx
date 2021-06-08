@@ -13,7 +13,7 @@ const Menu = ({ changePage }) => {
         <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 ms-auto">
             { Pages.PAGE_LIST.map( page => (
                 <li key={page.name} >
-                    <Link to={page.link} onClick={() => changePage(page.name)}
+                    <Link to={page.link} onClick={() => changePage(page)}
                           className={ page.name === Pages.HOME.name ? home : link }>
                         {page.display}
                     </Link>
@@ -24,10 +24,7 @@ const Menu = ({ changePage }) => {
     );
 }
 
-const mapStateToProps = state => ({
-    ...state,
-    list: state.apks.list
-});
+const mapStateToProps = state => ({ ...state });
 
 const mapDispatchToProps = { changePage }
 
