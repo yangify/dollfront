@@ -1,6 +1,8 @@
-export const ConfigurationCard = () => {
+import { connect } from "react-redux";
+
+const ConfigurationCard = () => {
     return (
-        <div className="row row-cols-1 row-cols-md-2 g-4">
+        <>
             <div className="col">
                 <div className="card">
                     <div className="card-body">
@@ -37,6 +39,12 @@ export const ConfigurationCard = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
+
+const mapStateToProps = state => ({ ...state });
+
+const mapDispatchToProps = {}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ConfigurationCard)

@@ -1,12 +1,27 @@
-import { ConfigurationCard } from "./configuration_card";
-import { ConfigurationForm } from "./configuration_form";
+import { connect } from "react-redux";
+import { useEffect } from "react";
 
-export const Configuration = () => {
+import { getConfiguration } from "../../../redux/dispatcher/configuration_dispatcher";
+import { ConfigurationForm } from "./configuration_form";
+import ConfigurationCard from "./configuration_card";
+
+const Configuration = ({ getConfiguration }) => {
+
+    // eslint-disable-next-line
+    useEffect(() => { getConfiguration() }, [])
+
     return (
         <>
             <ConfigurationForm />
-            <ConfigurationCard />
+            <div className="row row-cols-1 row-cols-md-2 g-4">
+                <ConfigurationCard />
+            </div>
         </>
     );
 };
 
+const mapStateToProps = state => ({ ...state });
+
+const mapDispatchToProps = { getConfiguration }
+
+export default connect(mapStateToProps, mapDispatchToProps)(Configuration)

@@ -5,6 +5,8 @@ export const CHANGE_PAGE = 'CHANGE_PAGE';
 export const GET_APK = 'GET_APK';
 export const SELECT_APK = 'SELECT_APK';
 
-
 // LINK
 export const GET_LINK = 'GET_LINK';
+
+// CONFIGURATION
+export const GET_CONFIGURATION = 'GET_CONFIGURATION';
