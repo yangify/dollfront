@@ -7,7 +7,7 @@ import { setPage } from "../../../redux/dispatcher/page_dispatcher";
 import { getConfiguration } from "../../../redux/dispatcher/configuration_dispatcher";
 import { ConfigurationForm } from "./configuration_form";
 
-const Configuration = ({ setPage, getConfiguration }) => {
+const Configuration = ({ configurations, setPage, getConfiguration }) => {
 
     useEffect(() => {
         setPage(CONFIGURATION);
@@ -18,13 +18,20 @@ const Configuration = ({ setPage, getConfiguration }) => {
         <>
             <ConfigurationForm />
             <div className="row row-cols-1 row-cols-md-2 g-4">
-                <ConfigurationCard />
+                {
+                    configurations.map(configuration => (
+                        <ConfigurationCard key={configuration._id} configuration={configuration}/>
+                    ))
+                }
             </div>
         </>
     );
 };
 
-const mapStateToProps = state => ({ ...state });
+const mapStateToProps = state => ({
+    ...state,
+    configurations: state.configurations
+});
 
 const mapDispatchToProps = {
     setPage,
