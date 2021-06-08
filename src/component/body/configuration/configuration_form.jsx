@@ -1,14 +1,30 @@
+import axios from "axios";
+import { useState } from "react";
+
+import { CONFIGURATION } from "../../../pages";
+
 export const ConfigurationForm = () => {
+
+    const [title, setTitle] = useState('');
+    const [query, setQuery] = useState('');
+
+    const changeTitle = e => { setTitle(e.target.value) };
+    const changeQuery = e => { setQuery(e.target.value) };
+    const onClick = () => {
+        const url = process.env.REACT_APP_SERVER_URL + process.env.REACT_APP_CONFIGURATION_ENDPOINT;
+        const data = new FormData();
+        data.append('title', title);
+        data.append('query', query);
+        axios.post(url, data).then(() => window.location.replace(CONFIGURATION.link))
+    }
+
     return (
         <div className='card mb-4 collapse' id='configurationForm'>
             <div className='card-body'>
-                <form action='http://localhost:5000/api/configuration' method='post'>
-                    <input type='text' name='name' /><br/>
-                    <input type='text' name='query' /><br/>
-                    <input type='submit' />
-                </form>
+                <input type='text' name='title' onChange={changeTitle} /><br/>
+                <input type='text' name='query' onChange={changeQuery} /><br/>
+                <input type='submit' onClick={onClick}/>
             </div>
         </div>
-
     );
 };
