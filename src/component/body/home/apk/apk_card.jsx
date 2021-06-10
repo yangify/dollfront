@@ -1,19 +1,19 @@
 import { useEffect } from "react";
 import { connect } from 'react-redux';
-import { ApkList } from "./apk_list";
+
 import { getApk } from "../../../../redux/dispatcher/apk_dispatcher";
+import { ApkList } from "./apk_list";
 
 const ApkCard = ({ list, getApk }) => {
 
-    // eslint-disable-next-line
-    useEffect( () => { getApk() }, [])
+    useEffect( () => { getApk() }, [getApk])
 
     return (
         <div className="card">
             <div className="card-header">APK</div>
             <div className="card-body overflow-auto">
                 { list.length === 0 ?
-                    <img src='nothingness.gif' alt='Nothing to see here' /> :
+                    <p>no apk uploaded</p> :
                     <ApkList apks={list} />
                 }
             </div>

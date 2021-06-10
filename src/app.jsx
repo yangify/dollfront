@@ -1,7 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { Header } from './component/header/header';
+import { NavBar } from './component/nav_bar/nav_bar';
 import { Body } from './component/body/body'
 import store from "./redux/store";
 
@@ -10,7 +10,7 @@ export const App = () => {
         <Provider store={store}>
             <Router>
                 <div className="App h-100">
-                    <Header />
+                    <NavBar />
                     <Body />
                 </div>
             </Router>

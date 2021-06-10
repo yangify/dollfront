@@ -1,13 +1,14 @@
 import { connect } from "react-redux";
-import { selectApk } from "../../../../redux/dispatcher/apk_dispatcher";
+import { deleteApk, selectApk } from "../../../../redux/dispatcher/apk_dispatcher";
 
-const ApkItem = ({ apk, selected, selectApk }) => {
+const ApkItem = ({ apk, selected, deleteApk, selectApk }) => {
 
     const dormant = "btn list-group-item list-group-item-action d-flex justify-content-between align-items-center";
     const active = dormant + " list-group-item-secondary";
     const isSelected = selected.name === apk.name;
 
-    const select = () => { selectApk(apk) };
+    const select = () => selectApk(apk);
+    const onClick = () => deleteApk(apk);
 
     return (
         <button className={isSelected ? active : dormant} onClick={select}>
@@ -16,11 +17,12 @@ const ApkItem = ({ apk, selected, selectApk }) => {
                 <div className="fw-normal">{ apk.date }</div>
             </div>
             <div>
-                <a href={ `${process.env.REACT_APP_SERVER_URL}${process.env.REACT_APP_DOWNLOAD_ENDPOINT}/${apk.name}` } download>
+                <a href={ `${process.env.REACT_APP_SERVER_URL}${process.env.REACT_APP_DOWNLOAD_ENDPOINT}/${apk.name}` } download
+                   className="ms-3 btn btn-sm btn-outline-primary rounded-pill">
                     <i className="bi bi-download"/>
                 </a>
-                <div className="ms-3 badge bg-success rounded-pill p-1">
-                    <i className="bi bi-check"/>
+                <div onClick={onClick} className="ms-3 btn btn-sm btn-outline-danger rounded-pill">
+                    <i className="bi bi-x"/>
                 </div>
             </div>
             {/*<div className="badge bg-success rounded-pill mt-3 p-2">*/}
@@ -44,6 +46,6 @@ const mapStateToProps = state => ({
     selected: state.apks.selected
 });
 
-const mapDispatchToProps = {selectApk}
+const mapDispatchToProps = { deleteApk, selectApk }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ApkItem)

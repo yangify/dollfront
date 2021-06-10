@@ -1,5 +1,4 @@
 export const DetectionItem = ({ link, path }) => {
-    console.log()
     return (
         <button className="btn list-group-item list-group-item-action">
             <div className="ms-2 me-auto">

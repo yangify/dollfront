@@ -9,6 +9,17 @@ export const getApk = async () => {
     }
 }
 
+export const deleteApk = async apk => {
+    const url = `${process.env.REACT_APP_SERVER_URL}${process.env.REACT_APP_APK_ENDPOINT}/${apk._id}`;
+    const config = { method: "DELETE" }
+    const response = await fetch(url, config)
+    const data = await response.json();
+    return {
+        type: type.DELETE_APK,
+        payload: data
+    }
+}
+
 export const selectApk = apk => {
     return {
         type: type.SELECT_APK,
