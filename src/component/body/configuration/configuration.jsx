@@ -19,9 +19,11 @@ const Configuration = ({ configurations, setPage, getConfiguration }) => {
             <ConfigurationForm />
             <div className="row row-cols-1 row-cols-md-2 g-4">
                 {
-                    configurations.map(configuration => (
-                        <ConfigurationCard key={configuration._id} configuration={configuration}/>
-                    ))
+                    configurations.length === 0 ?
+                        <p>no configurations</p> :
+                        configurations.map(configuration => (
+                            <ConfigurationCard key={configuration._id} configuration={configuration}/>
+                        ))
                 }
             </div>
         </>

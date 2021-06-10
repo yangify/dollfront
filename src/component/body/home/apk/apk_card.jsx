@@ -13,7 +13,7 @@ const ApkCard = ({ list, getApk }) => {
             <div className="card-header">APK</div>
             <div className="card-body overflow-auto">
                 { list.length === 0 ?
-                    <img src='nothingness.gif' alt='Nothing to see here' /> :
+                    <p>no apk uploaded</p> :
                     <ApkList apks={list} />
                 }
             </div>
