@@ -16,12 +16,14 @@ const ApkItem = ({ apk, selected, selectApk }) => {
                 <div className="fw-normal">{ apk.date }</div>
             </div>
             <div>
-                <a href={ `${process.env.REACT_APP_SERVER_URL}${process.env.REACT_APP_DOWNLOAD_ENDPOINT}/${apk.name}` } download>
+                <a href={ `${process.env.REACT_APP_SERVER_URL}${process.env.REACT_APP_DOWNLOAD_ENDPOINT}/${apk.name}` } download
+                   className="ms-3 btn btn-sm btn-outline-primary rounded-pill">
                     <i className="bi bi-download"/>
                 </a>
-                <div className="ms-3 badge bg-success rounded-pill p-1">
-                    <i className="bi bi-check"/>
-                </div>
+                <a href={ `${process.env.REACT_APP_SERVER_URL}${process.env.REACT_APP_DOWNLOAD_ENDPOINT}/${apk.name}` }
+                   className="ms-3 btn btn-sm btn-outline-danger rounded-pill">
+                    <i className="bi bi-x"/>
+                </a>
             </div>
             {/*<div className="badge bg-success rounded-pill mt-3 p-2">*/}
             {/*    <i className="bi bi-check-lg"/>*/}
