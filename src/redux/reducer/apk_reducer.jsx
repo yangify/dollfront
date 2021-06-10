@@ -16,6 +16,12 @@ export const ApkReducer = (state=initialState, action) => {
                 list: action.payload.apks,
                 selected: selected
             };
+
+        case type.DELETE_APK:
+            const id = action.payload.id;
+            const filteredList = state.list.filter(apk => apk._id !== id)
+            return {...state, list: filteredList, selected: filteredList.length > 0 ? filteredList[0] : {}};
+
         case type.SELECT_APK:
             return {
                 ...state,

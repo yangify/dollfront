@@ -5,6 +5,11 @@ export const getApk = () => async dispatch => {
     dispatch(action);
 };
 
+export const deleteApk = apk => async dispatch => {
+    const action = await apkAction.deleteApk(apk);
+    dispatch(action);
+}
+
 export const selectApk = apk => dispatch => {
     const action = apkAction.selectApk(apk);
     dispatch(action);

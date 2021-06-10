@@ -3,6 +3,7 @@ export const SET_PAGE = 'SET_PAGE';
 
 // APK
 export const GET_APK = 'GET_APK';
+export const DELETE_APK = 'DELETE_APK';
 export const SELECT_APK = 'SELECT_APK';
 
 // LINK
