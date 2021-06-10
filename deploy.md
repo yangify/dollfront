@@ -5,14 +5,11 @@
 ...
 
 ## Setup
-### Create ssh key-pair
-
-### Launch ec2 instance
-
-### Install requisites
+### Install pre-requisites
 
 #### Nodejs
     sudo apt-get install nodejs
+    sudo apt install npm
 
 #### serve
     npm install -g serve
