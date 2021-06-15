@@ -1,12 +1,15 @@
 import axios from "axios";
 import { useState } from "react";
+import { connect } from "react-redux";
 
-import { CONFIGURATION } from "../../../pages";
+import { CONFIGURATION } from "../../../../pages";
+import ConfigurationFormInput from "./configuration_form_input";
 
-export const ConfigurationForm = () => {
+const ConfigurationForm = () => {
 
-    const [groupName, setGroupName] = useState(undefined);
-    const [inputs, setInputs] = useState([{title: undefined, query: undefined}])
+    const baseState = {groupName: undefined, inputs: [{title: undefined, query: undefined}]}
+    const [groupName, setGroupName] = useState(baseState.groupName);
+    const [inputs, setInputs] = useState(baseState.inputs)
 
     const updateGroupName = e => { setGroupName(e.target.value) }
 
@@ -38,15 +41,7 @@ export const ConfigurationForm = () => {
                 <input type='text' name='group-name' placeholder='Group name' onChange={updateGroupName}/>
                 {
                     inputs.map((input, index) => (
-                        <div key={index} className='row mt-3'>
-                            <div className='col'>
-                                <input type='text' name='title' placeholder={input.title || 'Title'}
-                                       onChange={updateInput('title', index)} />
-                                <input type='text' name='query' placeholder={input.query || 'Query'}
-                                       onChange={updateInput('query', index)} />
-                                <button onClick={() => deleteInput(index)}>Delete</button>
-                            </div>
-                        </div>
+                        <ConfigurationFormInput key={index} input={input} index={index} updateInput={updateInput} deleteInput={deleteInput} />
                     ))
                 }
             </div>
@@ -56,3 +51,9 @@ export const ConfigurationForm = () => {
         </div>
     );
 };
+
+const mapStateToProps = state => ({ ...state });
+
+const mapDispatchToProps = { }
+
+export default connect(mapStateToProps, mapDispatchToProps)(ConfigurationForm)

@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 import { connect } from "react-redux";
 
-import ConfigurationCard from "./configuration_card";
+import ConfigurationCardList from "./card/configuration_card_list";
+import ConfigurationForm from "./form/configuration_form";
 import { CONFIGURATION } from "../../../pages";
 import { setPage } from "../../../redux/dispatcher/page_dispatcher";
 import { getConfiguration } from "../../../redux/dispatcher/configuration_dispatcher";
-import { ConfigurationForm } from "./configuration_form";
 
 const Configuration = ({ configurations, setPage, getConfiguration }) => {
 
@@ -21,9 +21,7 @@ const Configuration = ({ configurations, setPage, getConfiguration }) => {
                 {
                     configurations.length === 0 ?
                         <p>no configurations</p> :
-                        configurations.map(configuration => (
-                            <ConfigurationCard key={configuration._id} configuration={configuration}/>
-                        ))
+                        <ConfigurationCardList configurations={configurations}/>
                 }
             </div>
         </>
