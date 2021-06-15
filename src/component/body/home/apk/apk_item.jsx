@@ -22,7 +22,7 @@ const ApkItem = ({ apk, selected, deleteApk, selectApk }) => {
                     <i className="bi bi-download"/>
                 </a>
                 <div onClick={onClick} className="ms-3 btn btn-sm btn-outline-danger rounded-pill">
-                    <i className="bi bi-x"/>
+                    <i className="bi bi-x-lg" />
                 </div>
             </div>
             {/*<div className="badge bg-success rounded-pill mt-3 p-2">*/}
