@@ -27,7 +27,7 @@ export const ConfigurationForm = () => {
 
     const submitInputs = () => {
         const url = process.env.REACT_APP_SERVER_URL + process.env.REACT_APP_CONFIGURATION_ENDPOINT;
-        const data = {'group-name': groupName, 'data': inputs}
+        const data = {'groupName': groupName, 'data': inputs}
         axios.post(url, data).then(() => window.location.replace(CONFIGURATION.link))
     }
 
