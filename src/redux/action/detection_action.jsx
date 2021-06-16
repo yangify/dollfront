@@ -10,6 +10,6 @@ export const getDetections = async filename => {
 
     return {
         type: type.GET_LINK,
-        payload: data.data
+        payload: data
     }
 }
