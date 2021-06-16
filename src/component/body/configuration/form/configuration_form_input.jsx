@@ -7,8 +7,10 @@ const ConfigurationFormInput = ({ index, input, updateInput, deleteInput }) => {
             <div className='col'>
                 <input className="form-control" type='text' name='title'
                        placeholder={input.title || 'Title'} onChange={updateInput('title', index)}/>
-                <input className="form-control" type='text' name='query'
-                       placeholder={input.query || 'Query'} onChange={updateInput('query', index)}/>
+                <input className="form-control" type='text' name='search_term'
+                       placeholder={input.query || 'Search Term'} onChange={updateInput('search_term', index)}/>
+                <input className="form-control" type='text' name='is_regex'
+                       placeholder={input.query || 'Pattern type'} onChange={updateInput('pattern_type', index)}/>
                 <button onClick={() => deleteInput(index)}>Delete</button>
             </div>
         </div>
