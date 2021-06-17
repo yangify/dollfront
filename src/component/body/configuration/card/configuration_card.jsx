@@ -18,21 +18,18 @@ const ConfigurationCard = ({ configuration, deleteConfiguration }) => {
                     </div>
                 </div>
             </div>
-
-                <ConfigurationItemList data={configuration.data} />
-                {
-                    isAdding ?
-                        <form className="card-body">
-                            <input type='text' name='title' placeholder='Title'/><br/>
-                            <input type='text' name='query' placeholder='query'/><br/>
-                            <button type='submit'>Add</button>
-                        </form> :
-                        <></>
-                }
-
+            <ConfigurationItemList data={configuration.data} />
+            {
+                isAdding ?
+                    <form className="card-body">
+                        <input type='text' name='title' placeholder='Title'/><br/>
+                        <input type='text' name='query' placeholder='query'/><br/>
+                        <button type='submit'>Add</button>
+                    </form> :
+                    <></>
+            }
             <div className="card-footer text-center">
-                <button onClick={() => setAdding(!isAdding)}
-                        className="btn btn-sm btn-outline-dark mr-3">
+                <button onClick={() => setAdding(!isAdding)} className="btn btn-sm btn-outline-dark mr-3">
                     { isAdding ? "Cancel" : "Add" }
                 </button>
             </div>
