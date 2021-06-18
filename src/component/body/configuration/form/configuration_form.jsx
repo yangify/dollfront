@@ -38,7 +38,7 @@ const ConfigurationForm = () => {
         <div className='card mb-4 collapse' id='configurationForm'>
             <button onClick={addInput}>Add input</button>
             <div className='card-body'>
-                <input className="form-control" type='text' name='group-name'
+                <input className="form-control mb-2" type='text' name='group-name'
                        placeholder='Group name' onChange={updateGroupName}/>
                 {
                     inputs.map((input, index) => (
