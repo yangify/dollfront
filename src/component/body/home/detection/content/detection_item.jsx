@@ -1,4 +1,6 @@
-export const DetectionItem = ({ link, path }) => {
+import { connect } from "react-redux";
+
+const DetectionItem = ({ link, path }) => {
     return (
         <button className="btn list-group-item list-group-item-action">
             <div className="ms-2 me-auto">
@@ -8,3 +10,11 @@ export const DetectionItem = ({ link, path }) => {
         </button>
     );
 }
+
+const mapStateToProps = state => ({
+    ...state
+});
+
+const mapDispatchToProps = { }
+
+export default connect(mapStateToProps, mapDispatchToProps)(DetectionItem)

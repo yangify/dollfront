@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { connect } from "react-redux";
 
 import ApkCard from "./apk/apk_card";
-import DetectionCard from "./link/detection_card";
+import DetectionCard from "./detection/detection_card";
 import { HOME } from "../../../pages";
 import { setPage } from "../../../redux/dispatcher/page_dispatcher";
 
@@ -14,7 +14,7 @@ export const Home = ({ setPage }) => {
     return (
         <div className="row">
             <div className="col-xl-4 mb-4" style={{ maxHeight: "80vh" }}><ApkCard/></div>
-            <div className="col-xl-8 mb-4" style={{ maxHeight: "80vh" }}><DetectionCard/></div>
+            <div className="col-xl-8 mb-4" style={{ maxHeight: "40vh" }}><DetectionCard/></div>
         </div>
     );
 }

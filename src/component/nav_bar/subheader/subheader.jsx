@@ -10,7 +10,7 @@ const SubHeader = ({ page }) => {
                 {
                     page.name === Pages.CONFIGURATION.name ?
                         <button type="button" className="px-3 btn btn-warning shadow-none"
-                                data-bs-toggle="collapse" data-bs-target="#configurationForm">Add</button> :
+                                data-bs-toggle="collapse" data-bs-target="#configurationForm">Add Group</button> :
                         <></>
                 }
             </div>
