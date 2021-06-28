@@ -9,7 +9,7 @@ export const getDetections = async filename => {
     const data = await response.json();
 
     return {
-        type: type.GET_LINK,
+        type: type.GET_DETECTION,
         payload: data
     }
 }

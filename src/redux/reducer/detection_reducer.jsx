@@ -4,7 +4,7 @@ const initialState = {'data': []};
 
 export const DetectionReducer = (state=initialState, action) => {
     switch (action.type) {
-        case type.GET_LINK:
+        case type.GET_DETECTION:
             return action.payload;
         default:
             return state;
