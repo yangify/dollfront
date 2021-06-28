@@ -38,14 +38,16 @@ const ConfigurationForm = () => {
         <div className='card mb-4 collapse' id='configurationForm'>
             <button onClick={addInput}>Add input</button>
             <div className='card-body'>
-                <input className="form-control mb-4" type='text' name='group-name'
+                <input className="form-control" type='text' name='group-name'
                        placeholder='Group name' onChange={updateGroupName}/>
-                {
-                    inputs.map((input, index) => (
-                        <ConfigurationFormInput key={index} input={input} index={index}
-                                                updateInput={updateInput} deleteInput={deleteInput} />
-                    ))
-                }
+                <div className="list-group-flush">
+                    {
+                        inputs.map((input, index) => (
+                            <ConfigurationFormInput key={index} input={input} index={index}
+                                                    updateInput={updateInput} deleteInput={deleteInput} />
+                        ))
+                    }
+                </div>
             </div>
             <div className='card-footer'>
                 <input type='submit' onClick={submitInputs}/>

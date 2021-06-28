@@ -3,8 +3,7 @@ import { connect } from "react-redux";
 const ConfigurationFormInput = ({ index, input, updateInput, deleteInput }) => {
 
     return (
-        <div className='row'>
-            <div className='col mb-3'>
+            <div className='list-group-item py-4'>
                 <input className="form-control mb-2" type='text' name='title'
                        placeholder={input.title || 'Title'} onChange={updateInput('title', index)}/>
                 <input className="form-control mb-2" type='text' name='searchTerm'
@@ -22,7 +21,6 @@ const ConfigurationFormInput = ({ index, input, updateInput, deleteInput }) => {
 
                 <button onClick={() => deleteInput(index)}>Delete</button>
             </div>
-        </div>
     );
 }
 
