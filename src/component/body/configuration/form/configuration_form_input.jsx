@@ -11,12 +11,12 @@ const ConfigurationFormInput = ({ index, input, updateInput, deleteInput }) => {
 
                 <div className="form-check form-check-inline">
                     <input className="form-check-input" type="radio" value="literal" onChange={updateInput('patternType', index)} />
-                    <label className="form-check-label" htmlFor="literal">Literal</label>
+                    <label className="form-check-label">Literal</label>
                 </div>
 
                 <div className="form-check form-check-inline">
-                    <input className="form-check-input me-2" type="radio" name="pattern_type" value="regexp"/>
-                    <label className="form-check-label" >Regular expression</label>
+                    <input className="form-check-input" type="radio" value="regexp" onChange={updateInput('patternType', index)}/>
+                    <label className="form-check-label">Regular expression</label>
                 </div>
 
                 <button onClick={() => deleteInput(index)}>Delete</button>
