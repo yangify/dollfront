@@ -7,14 +7,14 @@ import ConfigurationFormInput from "./configuration_form_input";
 
 const ConfigurationForm = () => {
 
-    const baseState = {groupName: undefined, inputs: [{title: undefined, query: undefined}]}
+    const baseState = {groupName: undefined, inputs: [{title: undefined, searchTerm: undefined, patternType: undefined}]}
     const [groupName, setGroupName] = useState(baseState.groupName);
     const [inputs, setInputs] = useState(baseState.inputs)
 
     const updateGroupName = e => { setGroupName(e.target.value) }
 
     const addInput = () => {
-        setInputs(prevState => [...prevState, {title: undefined, query: undefined}]);
+        setInputs(prevState => [...prevState, baseState.inputs]);
     }
 
     const updateInput = (variable, index) => async e => {
@@ -38,7 +38,7 @@ const ConfigurationForm = () => {
         <div className='card mb-4 collapse' id='configurationForm'>
             <button onClick={addInput}>Add input</button>
             <div className='card-body'>
-                <input className="form-control mb-2" type='text' name='group-name'
+                <input className="form-control mb-4" type='text' name='group-name'
                        placeholder='Group name' onChange={updateGroupName}/>
                 {
                     inputs.map((input, index) => (
