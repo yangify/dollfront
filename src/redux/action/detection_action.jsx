@@ -13,3 +13,10 @@ export const getDetections = async filename => {
         payload: data
     }
 }
+
+export const toggleLoadingState = status => {
+    return {
+        type: type.SET_DETECTION_LOADING,
+        payload: status
+    }
+}
