@@ -7,7 +7,7 @@ import ConfigurationFormInput from "./configuration_form_input";
 
 const ConfigurationForm = () => {
 
-    const baseState = {groupName: undefined, inputs: [{title: undefined, searchTerm: undefined, patternType: undefined}]}
+    const baseState = {groupName: undefined, inputs: [{title: undefined, searchTerm: undefined, patternType: 'literal'}]}
     const [groupName, setGroupName] = useState(baseState.groupName);
     const [inputs, setInputs] = useState(baseState.inputs)
 
