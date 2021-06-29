@@ -9,7 +9,14 @@ export const getDetections = async filename => {
     const data = await response.json();
 
     return {
-        type: type.GET_LINK,
+        type: type.GET_DETECTION,
         payload: data
+    }
+}
+
+export const toggleLoadingState = status => {
+    return {
+        type: type.SET_DETECTION_LOADING,
+        payload: status
     }
 }

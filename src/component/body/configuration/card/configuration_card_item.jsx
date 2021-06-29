@@ -4,7 +4,7 @@ const ConfigurationItem = ({key, configuration}) => {
     return (
         <div key={key} className="list-group-item">
             <h5 className="card-title">{configuration.title}</h5>
-            <p className="card-text">{configuration.search_term}</p>
+            <p className="card-text">{configuration.searchTerm}</p>
         </div>
     );
 }
