@@ -6,7 +6,7 @@ import { ConfigurationReducer } from "./configuration_reducer";
 
 export default combineReducers({
    apks: ApkReducer,
-   detections: DetectionReducer,
+   detectionGroups: DetectionReducer,
    page: PageReducer,
    configurations: ConfigurationReducer
 });
