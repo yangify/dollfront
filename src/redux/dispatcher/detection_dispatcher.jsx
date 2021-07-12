@@ -9,3 +9,8 @@ export const toggleLoadingState = status => dispatch => {
     const action = DetectionAction.toggleLoadingState(status);
     dispatch(action);
 }
+
+export const toggleFilter = index => dispatch => {
+    const action = DetectionAction.toggleFilter(index);
+    dispatch(action);
+}

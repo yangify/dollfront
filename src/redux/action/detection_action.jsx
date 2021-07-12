@@ -20,3 +20,10 @@ export const toggleLoadingState = status => {
         payload: status
     }
 }
+
+export const toggleFilter = index => {
+    return {
+        type: type.TOGGLE_FILTER,
+        payload: index
+    }
+}
