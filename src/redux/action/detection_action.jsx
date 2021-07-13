@@ -21,7 +21,7 @@ export const toggleLoadingState = status => {
     }
 }
 
-export const toggleFilter = index => {
+export const toggleFilterButton = index => {
     return {
         type: type.TOGGLE_FILTER_BUTTON,
         payload: index

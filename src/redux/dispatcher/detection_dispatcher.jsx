@@ -10,7 +10,7 @@ export const toggleLoadingState = status => dispatch => {
     dispatch(action);
 }
 
-export const toggleFilter = index => dispatch => {
-    const action = DetectionAction.toggleFilter(index);
+export const toggleFilterButton = index => dispatch => {
+    const action = DetectionAction.toggleFilterButton(index);
     dispatch(action);
 }

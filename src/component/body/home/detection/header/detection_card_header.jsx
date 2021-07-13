@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { toggleFilter } from "../../../../../redux/dispatcher/detection_dispatcher";
+import { toggleFilterButton } from "../../../../../redux/dispatcher/detection_dispatcher";
 
 const DetectionCardHeader = ({ group, selected, toggleFilter, index}) => {
 
@@ -17,6 +17,6 @@ const mapStateToProps = state => ({
     ...state
 });
 
-const mapDispatchToProps = { toggleFilter }
+const mapDispatchToProps = { toggleFilter: toggleFilterButton }
 
 export default connect(mapStateToProps, mapDispatchToProps)(DetectionCardHeader)
