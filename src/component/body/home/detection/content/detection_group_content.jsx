@@ -2,13 +2,11 @@ import { connect } from "react-redux";
 
 import DetectionList from "./detection_list";
 
-const DetectionGroupContent = ({ group }) => {
-
-    const shouldFilter = false;  //TODO: get boolean from filter component
+const DetectionGroupContent = (props) => {
 
     const filter = detections => {
-        if (shouldFilter) {
-            const links = ["http://schemas.android.com/apk/res/android"];   //TODO: get this list
+        if (props.shouldFilter[props.index]) {
+            const links = ["http://schemas.android.com/apk/res/android"];   //TODO: get this list from somewhere
             return {...detections, data : detections.data.filter(detection => !links.includes(detection.link))};
         }
         return detections
@@ -18,7 +16,7 @@ const DetectionGroupContent = ({ group }) => {
         <div className="card-body overflow-auto">
             <div className="tab-content">
                 {
-                    group.data.map((detections, index) => (
+                    props.group.data.map((detections, index) => (
                         <DetectionList key={index} detectionList={filter(detections)} active={index === 0}/>
                     ))
                 }
@@ -28,7 +26,8 @@ const DetectionGroupContent = ({ group }) => {
 }
 
 const mapStateToProps = state => ({
-    ...state
+    ...state,
+    shouldFilter: state.detectionGroups.shouldFilter
 });
 
 const mapDispatchToProps = { }

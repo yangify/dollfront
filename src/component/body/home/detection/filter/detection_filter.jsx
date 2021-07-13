@@ -1,24 +1,15 @@
 import { connect } from "react-redux";
-import {useState} from "react";
 
-const DetectionFilter = ({index, showFilter}) => {
+import { toggleFilterCheckbox } from "../../../../../redux/dispatcher/detection_dispatcher";
 
-    const displayFilter = showFilter[index];
-
-    const [filters, setState] = useState({ android: {isChecked: true}});  //TODO put this in redux store and allow other component to access
-
-    const onChange = key => {
-        filters[key].isChecked = !filters[key].isChecked;  //TODO change this to a dispatch action
-        setState({...filters});
-    };
-
+const DetectionFilter = ({index, showFilter, shouldFilter, toggleFilterCheckbox}) => {
     return (
         <>
             {
-                displayFilter ?
+                showFilter[index] ?
                     <div className="form-check mx-4 mt-4">
                         <input className="form-check-input checked" type="checkbox" value="" id="flexCheckChecked"
-                               checked={filters['android'].isChecked} onChange={() => onChange('android')}/>
+                               checked={shouldFilter[index]} onChange={() => toggleFilterCheckbox(index)}/>
                         <label className="form-check-label" htmlFor="flexCheckChecked">Android links</label>
                     </div>:
                     <></>
@@ -29,9 +20,10 @@ const DetectionFilter = ({index, showFilter}) => {
 
 const mapStateToProps = state => ({
     ...state,
-    showFilter: state.detectionGroups.showFilter
+    showFilter: state.detectionGroups.showFilter,
+    shouldFilter: state.detectionGroups.shouldFilter
 });
 
-const mapDispatchToProps = {  }
+const mapDispatchToProps = { toggleFilterCheckbox }
 
 export default connect(mapStateToProps, mapDispatchToProps)(DetectionFilter)

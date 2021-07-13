@@ -14,3 +14,8 @@ export const toggleFilterButton = index => dispatch => {
     const action = DetectionAction.toggleFilterButton(index);
     dispatch(action);
 }
+
+export const toggleFilterCheckbox = index => dispatch => {
+    const action = DetectionAction.toggleFilterCheckbox(index);
+    dispatch(action);
+}

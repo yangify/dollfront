@@ -16,10 +16,10 @@ const DetectionCard = ({ detectionGroups, selected, getDetections }) => {
             {
                 detectionGroups.data.map((group, index) => (
                     <div key={index} className="card h-100 mb-4">
-                        <DetectionCardHeader group={group} selected={selected} index={index} />
+                        <DetectionCardHeader index={index} group={group} selected={selected} />
                         <DetectionFilter index={index}/>
                         <DetectionGroupTabs group={group.data} />
-                        <DetectionGroupContent group={group} />
+                        <DetectionGroupContent index={index} group={group} />
                     </div>
                 ))
             }

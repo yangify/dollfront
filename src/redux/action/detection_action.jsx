@@ -27,3 +27,10 @@ export const toggleFilterButton = index => {
         payload: index
     }
 }
+
+export const toggleFilterCheckbox = index => {
+    return {
+        type: type.TOGGLE_FILTER_CHECKBOX,
+        payload: index
+    }
+}

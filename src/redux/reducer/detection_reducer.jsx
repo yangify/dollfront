@@ -13,11 +13,14 @@ export const DetectionReducer = (state=initialState, action) => {
     switch (action.type) {
 
         case type.TOGGLE_FILTER_CHECKBOX:
-            return;
+            state.shouldFilter[action.payload] = !state.shouldFilter[action.payload];
+            return {
+                ...state,
+                shouldFilter: state.shouldFilter
+            }
 
         case type.TOGGLE_FILTER_BUTTON:
-            const index = action.payload;
-            state.showFilter[index] = !state.showFilter[index]
+            state.showFilter[action.payload] = !state.showFilter[action.payload]
             return {
                 ...state,
                 showFilter: state.showFilter
@@ -36,7 +39,8 @@ export const DetectionReducer = (state=initialState, action) => {
                 data: data,
                 filename: action.payload.filename,
                 _id: action.payload.id,
-                showFilter: new Array(data.length).fill(false)
+                showFilter: new Array(data.length).fill(false),
+                shouldFilter: new Array(data.length).fill(true)
             };
 
         default:
