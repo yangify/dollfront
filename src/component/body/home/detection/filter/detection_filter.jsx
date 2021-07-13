@@ -5,10 +5,10 @@ const DetectionFilter = ({index, showFilter}) => {
 
     const displayFilter = showFilter[index];
 
-    const [filters, setState] = useState({ android: {isChecked: true}});
+    const [filters, setState] = useState({ android: {isChecked: true}});  //TODO put this in redux store and allow other component to access
 
     const onChange = key => {
-        filters[key].isChecked = !filters[key].isChecked;
+        filters[key].isChecked = !filters[key].isChecked;  //TODO change this to a dispatch action
         setState({...filters});
     };
 

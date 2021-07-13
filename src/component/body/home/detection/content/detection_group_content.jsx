@@ -4,9 +4,14 @@ import DetectionList from "./detection_list";
 
 const DetectionGroupContent = ({ group }) => {
 
+    const shouldFilter = false;  //TODO: get boolean from filter component
+
     const filter = detections => {
-        const links = ["http://schemas.android.com/apk/res/android"];
-        return {...detections, data : detections.data.filter(detection => !links.includes(detection.link))};
+        if (shouldFilter) {
+            const links = ["http://schemas.android.com/apk/res/android"];   //TODO: get this list
+            return {...detections, data : detections.data.filter(detection => !links.includes(detection.link))};
+        }
+        return detections
     }
 
     return (

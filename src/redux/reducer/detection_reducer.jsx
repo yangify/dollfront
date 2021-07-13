@@ -5,13 +5,17 @@ const initialState = {
     data: [],
     filename: 'no file',
     isLoading: true,
-    showFilter: []
+    showFilter: [],
+    shouldFilter: []
 };
 
 export const DetectionReducer = (state=initialState, action) => {
     switch (action.type) {
 
-        case type.TOGGLE_FILTER:
+        case type.TOGGLE_FILTER_CHECKBOX:
+            return;
+
+        case type.TOGGLE_FILTER_BUTTON:
             const index = action.payload;
             state.showFilter[index] = !state.showFilter[index]
             return {

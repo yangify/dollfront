@@ -23,7 +23,7 @@ export const toggleLoadingState = status => {
 
 export const toggleFilter = index => {
     return {
-        type: type.TOGGLE_FILTER,
+        type: type.TOGGLE_FILTER_BUTTON,
         payload: index
     }
 }
