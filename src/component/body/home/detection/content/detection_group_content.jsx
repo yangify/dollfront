@@ -1,16 +1,28 @@
+import { useState, useEffect } from "react";
 import { connect } from "react-redux";
+import axios from "axios";
 
 import DetectionList from "./detection_list";
 
 const DetectionGroupContent = (props) => {
 
+    const [links, setLinks] = useState([]);
+
+    useEffect(() => {
+        const url = process.env.REACT_APP_SERVER_URL + process.env.REACT_APP_ANDROID_LINKS_ENDPOINT;
+        axios.get(url).then(response => setLinks(response.data.android))
+    }, [setLinks])
+
     const filter = detections => {
-        if (props.shouldFilter[props.index]) {
-            const links = ["http://schemas.android.com/apk/res/android"];   //TODO: get this list from somewhere
-            return {...detections, data : detections.data.filter(detection => !links.includes(detection.link))};
+        if (!props.shouldFilter[props.index]) return detections;
+
+        let data = detections.data;
+        for (const link of links) {
+            data = data.filter(detection => detection.link.indexOf(link) === -1);
         }
-        return detections
+        return {...detections, data : data};
     }
+
 
     return (
         <div className="card-body overflow-auto">
